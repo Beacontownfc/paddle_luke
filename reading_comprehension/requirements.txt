@@ -1,0 +1,4 @@
+wikipedia2vec==1.0.5
+regex
+transformers==2.3.0
+ujson
