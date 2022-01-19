@@ -52,47 +52,47 @@
 **代码结构**
 ```
 ├─open_entity
-| ├─paddle_luke.pt
-| ├─data
-| | ├─train.json
-| | ├─dev.json
-| | ├─test.json
-| | ├─merges.txt
-| | ├─entity_vocab.tsv
-| | ├─vocab.json
-| ├─luke_model 
+| ├─paddle_luke.pt           #预训练权重
+| ├─data                     # 数据集文件夹
+| | ├─train.json             #open entity 训练集
+| | ├─dev.json               #open entity 验证集
+| | ├─test.json              #open entity 测试集
+| | ├─merges.txt             #tokenizer 文件
+| | ├─entity_vocab.tsv       #实体词文件
+| | ├─vocab.json             #tokenizer 文件
+| ├─luke_model               #LUKE模型文件
 | | ├─utils
 | | ├─entity_vocab.py
 | | ├─interwiki_db.py
 | | ├─model.py   
-| ├─datagenerator.py
-| ├─main.py
-| ├─open_entity.py
-| ├─trainer.py
+| ├─datagenerator.py         #数据生成器文件
+| ├─main.py                  #运行训练并测试
+| ├─open_entity.py           #LUKE下游任务
+| ├─trainer.py               #训练
 | ├─utils.py
 | ├─word_tokenizer.py                      
 ├─reading_comprehension
-| ├─paddle_luke.pt
+| ├─paddle_luke.pt           
 | ├─luke_model
 | | ├─utils
 | | ├─model.py
 | ├─squad_data
 | | ├─squad
-| | | ├─train-v1.1.json
-| | | ├─dev-v1.1.json
+| | | ├─train-v1.1.json     # SQuAD1.1数据集训练集
+| | | ├─dev-v1.1.json       # SQuAD1.1数据集验证集
 | | ├─squad_change
 | | ├─entity_vocab.tsv
 | | ├─merges.txt
 | | ├─metadata.json
 | | ├─vocab.json
-| | ├─enwiki_20160305.pkl
-| | ├─enwiki_20181220_redirects.pkl
-| | ├─enwiki_20160305_redirects.pkl
+| | ├─enwiki_20160305.pkl   #LUKE官方提供的维基百科数据集
+| | ├─enwiki_20181220_redirects.pkl   #LUKE官方提供的维基百科数据集
+| | ├─enwiki_20160305_redirects.pkl   #LUKE官方提供的维基百科数据集
 | ├─src
 | ├─utils
 | ├─create_squad_data.py
 | ├─main.py
-| ├─reading_comprehension.py                                         
+| ├─reading_comprehension.py         #LUKE下游任务                                       
 ```
 
 安装第三方库
