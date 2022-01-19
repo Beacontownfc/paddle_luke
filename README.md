@@ -105,12 +105,24 @@ pip install -r requirements.txt
 ```bash
 python main.py 2>&1 | tee train.log
 ```
+运行结束后你将看到如下结果:
+```bash
+Results: %s {
+  "test_f1": 0.7750939345142244,
+  "test_precision": 0.7925356750823271,
+  "test_recall": 0.7584033613445378
+}
+```
 
 ##### 训练并测试Luke在SQuAD1.1数据集的精度:
 ###### 进入到`./reading_comprehension`文件夹下, 运行下列命令
 ```bash
 python create_squad_data.py
 python main.py 2>&1 | tee train.log
+```
+运行结束后你将看到如下结果:
+```bash
+{"exact_match": 89.75691579943235, "f1": 94.95702001984502}
 ```
 **说明**
 
