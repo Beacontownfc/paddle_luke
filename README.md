@@ -3,6 +3,9 @@
 ## 1 简介 
 本项目基于paddlepaddle框架复现了Luke预训练模型，主要复现Open Entity和SQuAD1.1数据集的结果。
 
+**说明**
+-此项目为旧版，新版在此处[https://github.com/Beacontownfc/paddle_luke_stable](https://github.com/Beacontownfc/paddle_luke_stable)
+
 **项目参考：**
 - [https://github.com/studio-ousia/luke](https://github.com/studio-ousia/luke)
 
