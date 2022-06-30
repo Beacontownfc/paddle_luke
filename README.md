@@ -112,7 +112,7 @@ python main.py 2>&1 | tee train.log
 ```bash
 Results: %s {
   "test_f1": 0.775093934514224,
-  "test_precision": 0.7925356750823271,
+  "test_precision": 0.792535675082327,
   "test_recall": 0.7584033613445378
 }
 ```
