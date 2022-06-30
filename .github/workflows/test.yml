@@ -1,16 +1,20 @@
-on: [pull_request]
+name: Get linked issues
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - edited
 
 jobs:
-  linked_issues:
+  get-linked-issues:
+    name: Get linked issues
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      - name: Find Linked Issues
-        id: links
-        uses: hossainemruz/linked-issues@main
-        with:
-          pr_url: ${{github.event.pull_request.html_url}}
-          format: IssueNumber
-
-      - name: Output linked Issue list
-        run: echo "${{ steps.links.outputs.issues }}"
+      - name: Get issues
+        id: get-issues
+        uses: mondeja/pr-linked-issues-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Print linked issue numbers
+        run: echo ${{ steps.get-issues.outputs.issues }}
