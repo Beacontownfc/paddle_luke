@@ -18,7 +18,7 @@ jobs:
           prurl: ${{ github.event.pull_request.url }}
 
       - name: "Validation action on 1"
-        if: ${{ steps.validator.outputs.valid == 1 }}
+        if: ${{ steps.validator.outputs.issue_num == 4 }}
         run: |
           echo $Github_Token > mytoken.txt
           gh auth login --with-token < mytoken.txt
