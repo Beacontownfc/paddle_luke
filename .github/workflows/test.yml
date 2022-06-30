@@ -22,4 +22,4 @@ jobs:
         with:
           actions: 'close-issue'
           token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ steps.validator.outputs.issue_num }}
+          issue-number: ${{ steps.validator.outputs.issue }}
