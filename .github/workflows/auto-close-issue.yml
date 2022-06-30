@@ -16,14 +16,10 @@ jobs:
         with:
           prbody: ${{ github.event.pull_request.body }}
           prurl: ${{ github.event.pull_request.url }}
-      
-      - name: "print"
-        run: |
-          echo ${{ github.event.pull_request.merged }}
 
       - name: Close Issue
         uses: peter-evans/close-issue@v2
-        if: ${{ github.event.pull_request.merged == 'true' }}
+        if: ${{ github.event.pull_request.merged }}
         with:
           issue-number: ${{ steps.validator.outputs.issueNumber }}
           comment: Auto-closing issue
