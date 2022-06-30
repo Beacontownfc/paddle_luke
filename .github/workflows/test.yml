@@ -1,25 +1,16 @@
-name: Has linked issues
-on:
-  pull_request_target:
-    types:
-      - opened
-      - reopened
-      - edited
+on: [pull_request]
 
 jobs:
-  check-linked-issues:
-    name: Check if pull request has linked issues
+  linked_issues:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-      - name: Get issues
-        id: get-issues
-        uses: mondeja/pr-linked-issues-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Print has linked issues
-        id: has-linked-issues
-        if: join(steps.get-issues.outputs.issues) != ''
-        run: echo "Has linked issues"
-      - name: Print has not linked issues
-        if: steps.has-linked-issues.conclusion == 'skipped'
-        run: echo "Has not linked issues"
+      - name: Find Linked Issues
+        id: links
+        uses: hossainemruz/linked-issues@main
+        with:
+          pr_url: ${{github.event.pull_request.html_url}}
+          format: IssueNumber
+
+      - name: Output linked Issue list
+        run: echo "${{ steps.links.outputs.issues }}"
