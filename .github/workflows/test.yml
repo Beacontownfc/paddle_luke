@@ -19,11 +19,11 @@ jobs:
       
       - name: "print"
         run: |
-          echo ${{ steps.validator.outputs.issue }}
+          echo ${{ steps.validator.outputs.issueNumber }}
 
       - name: Close issue
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'close-issue'
           token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ steps.validator.outputs.issue }}
+          issue-number: ${{ steps.validator.outputs.issueNumber }}
