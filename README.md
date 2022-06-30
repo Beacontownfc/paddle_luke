@@ -130,4 +130,6 @@ python main.py 2>&1 | tee train.log
 **说明**
 
 1、本项目在Aistudio平台，使用Tesla V100训练  
-2、本项目基于PaddlePaddle开发。  
+2、本项目基于PaddlePaddle开发。 
+
+
