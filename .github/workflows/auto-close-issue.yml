@@ -2,10 +2,10 @@ name: Auto close issue when PR is merged
 
 on:
   pull_request_target:
-    types: [ edited, synchronize, opened, reopened, merged ]
+    types: [ edited, synchronize, opened, reopened ]
 
 jobs:
-  checker:
+  close-issue:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
