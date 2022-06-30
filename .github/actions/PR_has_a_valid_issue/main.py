@@ -5,6 +5,7 @@ pattern = "#\d+"
 
 # PR body
 body = os.getenv("INPUT_PRBODY")
+print("qqwwqwqwqwq")
 print(body)
 # PR URL
 url  = os.getenv("INPUT_PRURL")
