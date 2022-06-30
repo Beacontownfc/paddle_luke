@@ -1,4 +1,7 @@
-on: [pull_request]
+on:
+  pull_request:
+    # we use the `edited` type to detect changes to the PR title
+    types: [opened, edited, synchronize, reopened]
 
 jobs:
   linked_issues:
