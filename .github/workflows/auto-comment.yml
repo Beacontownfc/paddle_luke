@@ -12,6 +12,9 @@ jobs:
   create-comment:
     runs-on: ubuntu-latest
     steps:
+      - name: print
+        run: |
+          echo ${{github.event.issue.number}}
       - name: Create comment
         uses: actions-cool/issues-helper@v3
         with:
