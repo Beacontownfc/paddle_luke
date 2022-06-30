@@ -21,9 +21,8 @@ jobs:
         run: |
           echo ${{ steps.validator.outputs.issueNumber }}
 
-      - name: Close issue
-        uses: actions-cool/issues-helper@v3
+      - name: Close Issue
+        uses: peter-evans/close-issue@v2
         with:
-          actions: 'close-issue'
-          token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ steps.validator.outputs.issueNumber }}
+          comment: Auto-closing issue
