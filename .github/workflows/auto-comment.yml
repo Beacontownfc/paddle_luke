@@ -3,15 +3,14 @@ name: Create Comment
 on:
   issues:
     types: [opened]
-  pull_request:
-    types:
-      - opened
-      - closed
 
 jobs:
   create-comment:
     runs-on: ubuntu-latest
     steps:
+      - name: print
+        run: |
+          echo ${{github.event.issue.number}}
       - name: Create comment
         uses: actions-cool/issues-helper@v3
         with:
