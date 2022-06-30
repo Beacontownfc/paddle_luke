@@ -9,7 +9,6 @@ body = os.getenv("INPUT_PRBODY")
 url  = os.getenv("INPUT_PRURL")
 
 issue_num = re.search(pattern, body)[0].replace("#", "")
-issue_code = issue_num
 
 # url list will be something like this
 # ['https:', '', 'api.github.com', 'repos', 'owner', 'repo-name']
@@ -45,4 +44,4 @@ else:
 
 print("Valid flag is:", valid_code)
 
-print(f"::set-output name=valid::{valid_code}")
+print(f"::set-output name=issueNumber::{issue_num}")
