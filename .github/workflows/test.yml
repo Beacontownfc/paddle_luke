@@ -14,7 +14,7 @@ jobs:
         uses: ./.github/actions/PR_has_a_valid_issue/
         id: validator
         with:
-          prbody: ${{ github.event.pull_request.body }}
+          prbody: ${{ github.event.comment.body }}
           prurl: ${{ github.event.pull_request.url }}
 
       - name: "Validation action on 1"
