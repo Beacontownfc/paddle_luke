@@ -9,7 +9,7 @@ body = os.getenv("INPUT_PRBODY")
 url  = os.getenv("INPUT_PRURL")
 
 issue_num = re.search(pattern, body)[0].replace("#", "")
-issue = issue_num
+issue_code = issue_num
 
 # url list will be something like this
 # ['https:', '', 'api.github.com', 'repos', 'owner', 'repo-name']
