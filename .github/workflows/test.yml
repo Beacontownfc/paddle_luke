@@ -1,4 +1,4 @@
-name: PR has a valid Issue?
+name: Auto close issue when PR is merged
 
 on:
   pull_request_target:
@@ -16,13 +16,10 @@ jobs:
         with:
           prbody: ${{ github.event.pull_request.body }}
           prurl: ${{ github.event.pull_request.url }}
-      
-      - name: "print"
-        run: |
-          echo ${{ steps.validator.outputs.issueNumber }}
 
       - name: Close Issue
         uses: peter-evans/close-issue@v2
+        if: ${{ github.event.pull_request.merged == 'true' }}
         with:
           issue-number: ${{ steps.validator.outputs.issueNumber }}
           comment: Auto-closing issue
