@@ -1,4 +1,4 @@
-name: I report linked issues that are not really linked
+name: Has linked issues
 on:
   pull_request_target:
     types:
@@ -7,21 +7,19 @@ on:
       - edited
 
 jobs:
-  check-linked-issues-by-content:
-    name: Has "linked issues" defined by PR content
+  check-linked-issues:
+    name: Check if pull request has linked issues
     runs-on: ubuntu-latest
     steps:
       - name: Get issues
         id: get-issues
         uses: mondeja/pr-linked-issues-action@v2
-        with:
-          add_links_by_content: |
-            **Closes**: #{issue_number}
-            #
-            # You can add comments that will be ignored
-            #
-            :wrench: the problem #{issue_number} like a boss
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Print linked issue numbers
-        run: echo ${{ steps.get-issues.outputs.issues }}
+      - name: Print has linked issues
+        id: has-linked-issues
+        if: join(steps.get-issues.outputs.issues) != ''
+        run: echo "Has linked issues"
+      - name: Print has not linked issues
+        if: steps.has-linked-issues.conclusion == 'skipped'
+        run: echo "Has not linked issues"
