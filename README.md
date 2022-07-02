@@ -111,7 +111,7 @@ python main.py 2>&1 | tee train.log
 运行结束后你将看到如下结果:
 ```bash
 Results: %s {
-  "test_f1": 0.7750939345142241,
+  "test_f1": 0.77509393451422411,
   "test_precision": 0.792535675082327,
   "test_recall": 0.75840336134453781
 }
