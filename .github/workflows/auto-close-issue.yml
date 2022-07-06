@@ -18,10 +18,10 @@ jobs:
 
       - name: Close Issue
         uses: peter-evans/close-issue@v2
-        if: ${{ github.event.pull_request.merged }}
+        if: ${{ github.event.pull_request.merged && steps.Closer.outputs.issueNumber != -1 }}
         with:
           issue-number: ${{ steps.Closer.outputs.issueNumber }}
-          comment: Auto-closing issue
+          comment: The associated PR has been merged, this issue is automatically closed, you can reopend if necessary.
         env:
           Github_Token: ${{ secrets.GITHUB_TOKEN }}
           PRNUM: ${{ github.event.pull_request.number }}
