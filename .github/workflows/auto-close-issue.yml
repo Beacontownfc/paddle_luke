@@ -15,6 +15,10 @@ jobs:
         id: Closer
         with:
           prbody: ${{ github.event.pull_request.body }}
+      
+      - name: print
+        run: |
+          echo ${{steps.Closer.outputs.issueNumber}}
 
       - name: Close Issue
         uses: peter-evans/close-issue@v2
