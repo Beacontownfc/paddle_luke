@@ -4,7 +4,6 @@ on:
 jobs:
   CheckDeadLinks:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     if: (github.repository == 'Beacontownfc/paddle_luke')
     steps:
       - uses: actions/checkout@v3
@@ -12,4 +11,4 @@ jobs:
         with:
           use-quiet-mode: 'no'
           use-verbose-mode: 'yes'
-          folder-path: '/home/runner/work/paddle_luke'
+          folder-path: 'open_entity/'
