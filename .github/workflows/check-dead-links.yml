@@ -11,4 +11,4 @@ jobs:
         with:
           use-quiet-mode: 'no'
           use-verbose-mode: 'yes'
-          folder-path: 'open_entity/'
+          folder-path: '../'
