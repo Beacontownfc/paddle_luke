@@ -18,13 +18,13 @@ jobs:
           ref: 'main'
       
       - name: scheduled crawl linkis website contributor
-      - uses: ./.github/actions/Contributor_crawel
+        uses: ./.github/actions/Contributor_crawel
         with:
           repo: apache/incubator-linkis-website
           num: 1000
       
       - name: scheduled crawl linkis contributor
-      - uses: ./.github/actions/Contributor_crawel
+        uses: ./.github/actions/Contributor_crawel
         with:
           repo: apache/incubator-linkis
           num: 1000
