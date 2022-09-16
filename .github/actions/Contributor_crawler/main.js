@@ -14,7 +14,7 @@ https.get(`https://api.github.com/repos/${repo}/contributors?page=1&per_page=${n
     });
     res.on('end', () => {
         let jsonstr = Buffer.concat(chunks).toString('utf-8');
-        fs.writeFileSync(`/home/runner/work/incubator-linkis-website/incubator-linkis-website/src/components/${name}`, jsonstr, (err) => {
+        fs.writeFileSync(`/home/runner/work/paddle_luke/paddle_luke/${name}`, jsonstr, (err) => {
             if(err) console.log(err);
         })
     })
